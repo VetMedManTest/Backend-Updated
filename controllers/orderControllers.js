@@ -229,7 +229,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
   `;
     try {
       await sendEmail({
-        email: [req.user.email, 'anjalitejasvi501@gmail.com'],
+        email: [req.user.email, 'vetmedmanhq@gmail.com'],
         subject: 'Order confirmation VetmedMan',
         html:message,
         contentType: 'text/html',
