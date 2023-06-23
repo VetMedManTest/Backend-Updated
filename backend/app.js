@@ -24,7 +24,7 @@ const order = require("./routes/orderRoutes");
 const varieties = require("./routes/varietyRoutes");
 const contactUs = require("./routes/contactUsRoutes");
 const healthCheck = require("./routes/healthCheckRoutes");
-//
+const rfq = require("./routes/rfqRoutes");
 
 app.use("/api/v1", user);
 app.use("/api/v1", animalType);
@@ -36,6 +36,7 @@ app.use("/api/v1", order);
 app.use("/api/v1", varieties);
 app.use("/api/v1", contactUs);
 app.use("/api/v1", healthCheck);
+app.use("/api/v1", rfq);
 
 app.use("*", (req, res) => {
   res.status(404).json({
