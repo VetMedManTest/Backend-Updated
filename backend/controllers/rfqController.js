@@ -4,43 +4,42 @@ const catchAsyncErrors = require("../middleware/catchAsyncError");
 
 exports.createRFQ = catchAsyncErrors(async (req, res, next) => {
   const {
-    productID,
-    uom,
-    cc,
     description,
-    companyName,
-    email,
-    quantity,
+    qty,
     leadTime,
-    responseByDate,
-    comments,
+    responseDate,
+    email,
+    additionalInformation,
+    phoneNumber,
+    endUser,
+    additional,
+    address,
   } = req.body;
 
   if (
-    !productID ||
-    !uom ||
-    !cc ||
     !description ||
-    !companyName ||
-    !email ||
-    !quantity ||
+    !qty ||
     !leadTime ||
-    !responseByDate
+    !responseDate ||
+    !email ||
+    !phoneNumber ||
+    !endUser ||
+    !address
   ) {
     return next(new ErrorHandler("Missing required fields for RFQ", 400));
   }
 
   const newRFQ = new RFQ({
-    productID,
-    uom,
-    cc,
     description,
-    companyName,
-    email,
-    quantity,
+    qty,
     leadTime,
-    responseByDate,
-    comments,
+    responseDate,
+    email,
+    additionalInformation,
+    phoneNumber,
+    endUser,
+    additional,
+    address,
   });
 
   await newRFQ.save();
