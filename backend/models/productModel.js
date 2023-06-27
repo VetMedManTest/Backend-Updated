@@ -188,4 +188,4 @@ const ProductSchema = new Schema(
   { minimize: false } // Retains empty objects and arrays in the document
 );
 
-module.exports = mongoose.model("ProductNew", ProductSchema);
+module.exports = mongoose.model("Product", ProductSchema);
