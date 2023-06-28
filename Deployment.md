@@ -1,0 +1,11 @@
+# Backend Deployment
+- Make a new app service on Azure -> Web App
+- Create a Resource Group 
+- Node Version 16
+- Windows Machine
+- Set region East US
+- Deployment -> Connect Github Repo
+- Network -> Enable Public Access
+- Enable CORS -> Add Front End link
+- Set the varibles in config file at Configuration tab
+- Finish and run
